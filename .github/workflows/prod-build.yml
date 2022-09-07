@@ -24,7 +24,7 @@ jobs:
     - name: Install trunk
       run: cargo install --locked trunk
     - name: Install tailwindcss
-      run: npm install tailwindcss
+      run: npm -g install tailwindcss
     - name: Compile css
       run: tailwindcss -o --minify ./styles/output.css
     - name: Build code
