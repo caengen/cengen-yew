@@ -34,7 +34,7 @@ impl Component for Model {
             <div class={classes!("ml-3", "bg-gray-900", "p-8", "h-full")}>
                 <nav>
                     <ol class={classes!("text-white", "flex", "space-x-6")}>
-                        <li class><a href="">{"Christian Engen"}</a></li>
+                        <li ><a href="">{"Christian Engen"}</a></li>
                         <li><a href="">{"Work"}</a></li>
                         <li><a href="">{"Posts"}</a></li>
                         <li><a href="">{"About"}</a></li>
