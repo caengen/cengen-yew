@@ -31,9 +31,19 @@ impl Component for Model {
         // This gives us a component's "`Scope`" which allows us to send messages, etc to the component.
         let link = ctx.link();
         html! {
-            <div class={classes!("ml-3", "bg-gray-100", "p-8", "h-max")}>
-                <button class={classes!("bg-red-400","text-lg", "font-bold", "w-6", "border-2")} onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
-                <p>{ self.value }</p>
+            <div class={classes!("ml-3", "bg-gray-900", "p-8", "h-full")}>
+                <nav>
+                    <ol class={classes!("text-white", "flex", "space-x-6")}>
+                        <li class><a href="">{"Christian Engen"}</a></li>
+                        <li><a href="">{"Work"}</a></li>
+                        <li><a href="">{"Posts"}</a></li>
+                        <li><a href="">{"About"}</a></li>
+                    </ol>
+                </nav>
+                // <button
+                //     class={classes!("bg-red-400","text-lg", "font-bold", "w-6", "border-2")}
+                //     onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
+                // <p>{ self.value }</p>
             </div>
         }
     }
