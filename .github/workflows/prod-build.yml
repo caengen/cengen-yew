@@ -23,8 +23,10 @@ jobs:
       run: rustup target add wasm32-unknown-unknown
     - name: Install trunk
       run: cargo install --locked trunk
+    - name: Install tailwindcss
+      run: npm install tailwindcss
     - name: Compile css
-      run: npx tailwindcss -o --minify ./styles/output.css
+      run: tailwindcss -o --minify ./styles/output.css
     - name: Build code
       run: trunk build --release
     - name: Commit wasm
