@@ -32,3 +32,4 @@ jobs:
       with:
         github_token: ${{ secrets.PASS_TOKEN }}
         add: './dist'
+        commit: '-f'
