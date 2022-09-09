@@ -11,3 +11,7 @@ Serve app
 
 Tailwind watcher
 `tailwindcss -w -o ./styles/output.css`
+
+## Production deploy
+`trunk build --production`
+`tailwindcss -o ./styles/output.css --minify`
