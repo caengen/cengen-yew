@@ -27,8 +27,10 @@ jobs:
       run: npx tailwindcss -o ./styles/output.css --minify
     - name: Build code
       run: trunk build --release
+    - name: Rename dist
+      run: mv -f dist docs
     - name: Commit wasm
       uses: EndBug/add-and-commit@v9
       with:
         github_token: ${{ secrets.PASS_TOKEN }}
-        add: './dist -f'
+        add: './docs -f'
