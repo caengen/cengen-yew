@@ -31,5 +31,4 @@ jobs:
       uses: EndBug/add-and-commit@v9
       with:
         github_token: ${{ secrets.PASS_TOKEN }}
-        add: './dist'
-        commit: '-f'
+        add: './dist -f'
