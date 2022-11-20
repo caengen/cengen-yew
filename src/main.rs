@@ -37,16 +37,19 @@ impl Component for Page {
         // This gives us a component's "`Scope`" which allows us to send messages, etc to the component.
         let link = ctx.link();
         html! {
-            <div class={classes!("ml-3", "bg-red-100", "p-", "h-")}>
-                <nav>
-                    <ol class={classes!("text-white", "flex", "space-x-6")}>
-                        <li ><Link<Route> to={Route::Home}>{"Christian Engen"}</Link<Route>></li>
-                        <li><Link<Route> to={Route::Work}>{"Work"}</Link<Route>></li>
-                        <li><Link<Route> to={Route::Posts}>{"Posts"}</Link<Route>></li>
-                        <li><Link<Route> to={Route::About}>{"About"}</Link<Route>></li>
+            <div class={classes!("flex","flex-col", "m-auto", "max-w-screen-md", "text-gray-900",)}>
+                <nav class={classes!("py-10")}>
+                    <ol class={classes!("flex")}>
+                        <li><Link<Route> to={Route::Home}>{"@cengen"}</Link<Route>></li>
+                        <div class={classes!("ml-auto", "flex", "space-x-14")}>
+                        <li><Link<Route> to={Route::About}>{"about"}</Link<Route>></li>
+                        <li><Link<Route> to={Route::Posts}>{"posts"}</Link<Route>></li>
+                        <li><Link<Route> to={Route::Work}>{"work"}</Link<Route>></li>
+                        <li><Link<Route> to={Route::Games}>{"games"}</Link<Route>></li>
+                        </div>
                     </ol>
                 </nav>
-                <main>
+                <main class={classes!("py-10")}>
                     { for ctx.props().children.iter() }
                 </main>
                 // <button
