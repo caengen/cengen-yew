@@ -68,7 +68,7 @@ pub fn route_link(props: &RouteLinkProps) -> Html {
     let classes = if route == props.to {
         classes!("text-gray-900")
     } else {
-        classes!("text-gray-400")
+        classes!("text-gray-400", "hover:text-gray-600")
     };
 
     html! {

@@ -2,35 +2,36 @@ name: prod build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - name: Download wasm target
-      run: rustup target add wasm32-unknown-unknown
-    - name: Install trunk
-      run: cargo install --locked trunk
-    - name: Compile css
-      run: npx tailwindcss -o ./styles/output.css --minify
-    - name: Build code
-      run: trunk build --release
-    - name: Rename dist
-      run: mv -f dist docs
-    - name: Commit wasm
-      uses: EndBug/add-and-commit@v9
-      with:
-        github_token: ${{ secrets.PASS_TOKEN }}
-        add: './docs -f'
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Download wasm target
+        run: rustup target add wasm32-unknown-unknown
+      - name: Install trunk
+        run: cargo install --locked trunk
+      - name: Compile css
+        run: npx tailwindcss -o ./styles/output.css --minify
+      - name: Build code
+        run: trunk build --release
+      - name: delete old docs
+        run: rm -Rf docs
+      - name: Rename dist
+        run: mv -f dist docs
+      - name: Commit wasm
+        uses: EndBug/add-and-commit@v9
+        with:
+          github_token: ${{ secrets.PASS_TOKEN }}
+          add: "./docs -f"
