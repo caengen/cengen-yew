@@ -2,17 +2,17 @@ use yew_router::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
-    #[at("/docs")]
+    #[at("/")]
     Home,
-    #[at("/docs/work")]
+    #[at("/work")]
     Work,
-    #[at("/docs/games")]
+    #[at("/games")]
     Games,
-    #[at("/docs/posts")]
+    #[at("/posts")]
     Posts,
-    #[at("/docs/about")]
+    #[at("/about")]
     About,
     #[not_found]
-    #[at("/docs/404")]
+    #[at("/404")]
     NotFound,
 }
