@@ -37,11 +37,11 @@ impl Component for Page {
         // let link = ctx.link();
 
         html! {
-            <div class={classes!("flex","flex-col", "m-auto", "max-w-screen-md", "text-gray-900",)}>
-                <nav class={classes!("py-10")}>
-                    <ol class={classes!("flex")}>
+            <div class={"flex flex-col m-auto max-w-screen-md text-gray-900"}>
+                <nav class={"py-10"}>
+                    <ol class={"flex"}>
                         <li><RouteLink to={Route::Home}>{"@cengen"}</RouteLink></li>
-                        <div class={classes!("ml-auto", "flex", "space-x-14")}>
+                        <div class={"ml-auto flex space-x-14"}>
                         <li><RouteLink to={Route::About}>{"about"}</RouteLink></li>
                         <li><RouteLink to={Route::Posts}>{"posts"}</RouteLink></li>
                         <li><RouteLink to={Route::Work}>{"work"}</RouteLink></li>
@@ -49,7 +49,7 @@ impl Component for Page {
                         </div>
                     </ol>
                 </nav>
-                <main class={classes!("py-10")}>
+                <main class={"py-10"}>
                     { for ctx.props().children.iter() }
                 </main>
             </div>
