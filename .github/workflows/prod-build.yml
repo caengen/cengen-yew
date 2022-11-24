@@ -25,7 +25,7 @@ jobs:
       - name: Compile css
         run: npx tailwindcss -o ./styles/output.css --minify
       - name: Build code
-        run: trunk build --release
+        run: trunk build --release --public-url "https://caengen.github.io/cengen-yew/"
       - name: delete old docs
         run: rm -Rf docs
       - name: Rename dist
