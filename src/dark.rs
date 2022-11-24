@@ -26,9 +26,7 @@ impl Component for DarkMode {
     type Properties = DarkModeProps;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            dark_enabled: false,
-        }
+        Self { dark_enabled: true }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
