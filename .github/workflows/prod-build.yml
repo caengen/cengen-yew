@@ -30,6 +30,8 @@ jobs:
         run: rm -Rf docs
       - name: Rename dist
         run: mv -f dist docs
+      - name: Add CNAME
+        run: echo "cengen.xyz" >> docs/CNAME
       - name: Commit wasm
         uses: EndBug/add-and-commit@v9
         with:
