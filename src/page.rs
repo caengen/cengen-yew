@@ -1,4 +1,5 @@
 use super::routes::Route;
+use super::DarkModeToggle;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -46,6 +47,7 @@ impl Component for Page {
                         <li><RouteLink to={Route::Posts}>{"posts"}</RouteLink></li>
                         <li><RouteLink to={Route::Work}>{"work"}</RouteLink></li>
                         <li><RouteLink to={Route::Games}>{"games"}</RouteLink></li>
+                        <li><DarkModeToggle /></li>
                         </div>
                     </ol>
                 </nav>
@@ -66,9 +68,14 @@ pub struct RouteLinkProps {
 pub fn route_link(props: &RouteLinkProps) -> Html {
     let route = use_route::<Route>().unwrap_or_default();
     let classes = if route == props.to {
-        classes!("text-gray-900")
+        classes!("text-gray-900", "dark:text-gray-100")
     } else {
-        classes!("text-gray-400", "hover:text-gray-600")
+        classes!(
+            "text-gray-400 ",
+            "dark:text-gray-300",
+            "hover:text-gray-200",
+            "dark:hover:text-gray-400"
+        )
     };
 
     html! {
