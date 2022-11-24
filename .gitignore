@@ -2,3 +2,4 @@
 dist
 docs
 styles/output.css
+.DS_Store
