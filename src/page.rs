@@ -38,7 +38,7 @@ impl Component for Page {
         // let link = ctx.link();
 
         html! {
-            <div class={"flex flex-col m-auto max-w-screen-md text-gray-900"}>
+            <div class={"flex flex-col m-auto max-w-screen-md text-gray-900 dark:text-gray-50"}>
                 <nav class={"py-10"}>
                     <ol class={"flex"}>
                         <li><RouteLink to={Route::Home}>{"@cengen"}</RouteLink></li>
@@ -72,9 +72,8 @@ pub fn route_link(props: &RouteLinkProps) -> Html {
     } else {
         classes!(
             "text-gray-400 ",
-            "dark:text-gray-300",
             "hover:text-gray-200",
-            "dark:hover:text-gray-400"
+            "dark:hover:text-gray-300"
         )
     };
 

@@ -42,9 +42,9 @@ impl Component for DarkMode {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let class = if self.dark_enabled {
-            "dark:bg-gray-900 min-h-full"
+            "transition ease-in-out dark:bg-slate-800 min-h-screen"
         } else {
-            "min-h-full"
+            "transition ease-in-out min-h-screen"
         };
         let toggle = ctx.link().callback(|message: DarkModeMessage| message);
         let context = DarkModeContext {
@@ -66,9 +66,9 @@ impl Component for DarkMode {
 #[function_component(DarkModeToggle)]
 pub fn dark_mode_toggle() -> Html {
     let ctx = use_context::<DarkModeContext>().expect("no dark mode context available");
-    let content = if ctx.dark_mode { "🌚" } else { "🌝" };
+    let content = if ctx.dark_mode { "🌝" } else { "🌚" };
     let onclick = move |_| ctx.toggle.emit(DarkModeMessage::Toggle);
     html! {
-        <button onclick={onclick} class={"rounded shadow"}>{content}</button>
+        <button onclick={onclick} class={"text-2xl leading-5 rounded-full p-1 bg-transparent opacity-80 hover:opacity-100"}>{content}</button>
     }
 }
