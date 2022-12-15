@@ -58,7 +58,7 @@ pub fn games_page() -> Html {
             img={Img {
               src: String::from("https://github.com/caengen/asteroids-bevy/blob/master/demo/demo.gif?raw=true"),
               alt: String::from("showcase asteroids"),
-              class: String::from("w-5/12"),
+              class: String::from("w-5/12 flex-shrink-0"),
             }}
           >
             <h2 class={"text-base"}>{"Made in Bevy"}</h2>
@@ -72,7 +72,7 @@ pub fn games_page() -> Html {
             img={Img {
               src: String::from("https://github.com/caengen/tetris-rs/blob/master/demo/demo.gif?raw=true"),
               alt: String::from("showcase tetris"),
-              class: String::from("w-5/12"),
+              class: String::from("w-5/12 flex-shrink-0"),
             }}
           >
             <h2 class={"text-base"}>{"Made with Macroquad in Rust"}</h2>
@@ -87,7 +87,7 @@ pub fn games_page() -> Html {
             img={Img {
               src: String::from("https://github.com/caengen/asteroid-rs/blob/master/demo/demo.gif?raw=true"),
               alt: String::from("showcase asteroid"),
-              class: String::from("w-5/12"),
+              class: String::from("w-5/12 flex-shrink-0"),
             }}
           >
             <h2 class={"text-base"}>{"Made with Macroquad"}</h2>
@@ -102,7 +102,7 @@ pub fn games_page() -> Html {
             img={Img {
               src: String::from("https://github.com/caengen/flappy-bird-rs/blob/master/demo/flappy.gif?raw=true"),
               alt: String::from("showcase flappy-bird"),
-              class: String::from("w-5/12"),
+              class: String::from("w-5/12 flex-shrink-0"),
             }}
           >
             <h2 class={"text-base"}>{"Everyone's favorite terrible game"}</h2>
@@ -117,7 +117,7 @@ pub fn games_page() -> Html {
             img={Img {
               src: String::from("https://github.com/caengen/pong-rs/blob/master/demo/demo.gif?raw=true"),
               alt: String::from("showcase pong"),
-              class: String::from("w-5/12"),
+              class: String::from("w-5/12 flex-shrink-0"),
             }}
           >
             <h2 class={"text-base"}>{"First game of the year"}</h2>
